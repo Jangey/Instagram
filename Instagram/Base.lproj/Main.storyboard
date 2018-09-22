@@ -112,7 +112,7 @@
             </objects>
             <point key="canvasLocation" x="2696.8000000000002" y="-278.41079460269867"/>
         </scene>
-        <!--Photo Map View Controller-->
+        <!--New Post-->
         <scene sceneID="Z9H-Bt-7Zh">
             <objects>
                 <viewController id="C5V-kW-i3Y" customClass="PhotoMapViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -148,7 +148,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ws4-Nr-Qla"/>
                     </view>
-                    <navigationItem key="navigationItem" id="F3I-P2-30o">
+                    <navigationItem key="navigationItem" title="New Post" id="F3I-P2-30o">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="a8s-re-GIr">
                             <connections>
                                 <action selector="cancelPress:" destination="C5V-kW-i3Y" id="IRK-ty-QHE"/>
@@ -244,7 +244,6 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nSZ-BG-y1h"/>
         <segue reference="hXC-0f-BDO"/>
     </inferredMetricsTieBreakers>
 </document>
