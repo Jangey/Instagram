@@ -10,11 +10,19 @@ import UIKit
 import Parse
 
 class HomeFeedViewController: UIViewController {
-
+    
+    
+    
+    
+    @IBOutlet weak var homeTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+       
+        homeTableView.rowHeight = 180
+        //homeTableView.dataSource = self
     }
     
     @IBAction func onLogout(_ sender: Any) {

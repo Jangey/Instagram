@@ -12,6 +12,10 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     var imagePicker = UIImagePickerController()
+    @IBOutlet weak var captionTextField: UITextField!
+    @IBOutlet weak var previewImage: UIImageView!
+    
+    var resizedPhoto: UIImageView!
     
     
     override func viewDidLoad() {
@@ -47,15 +51,24 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     /*
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
-        // Get the image captured by the UIImagePickerController
-        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        resizeImageView.image = image
         
-        // Do something with the images (based on your use case)
-        
-        // Dismiss UIImagePickerController to go back to your original view controller
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+    
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            postPhoto.image = resize(image: image, newSize: CGSize(width: 30, height: 30))
+        }
         dismiss(animated: true, completion: nil)
     }
     */
