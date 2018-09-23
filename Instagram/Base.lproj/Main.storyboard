@@ -112,7 +112,7 @@
             </objects>
             <point key="canvasLocation" x="2696.8000000000002" y="-278.41079460269867"/>
         </scene>
-        <!--New Post-->
+        <!--Photo Map View Controller-->
         <scene sceneID="Z9H-Bt-7Zh">
             <objects>
                 <viewController id="C5V-kW-i3Y" customClass="PhotoMapViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,6 +137,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0af-xm-VQB">
+                                <rect key="frame" x="30" y="252" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take a Picture"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="C5V-kW-i3Y" eventType="touchUpInside" id="Ph6-LC-vR5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRs-fu-5za">
+                                <rect key="frame" x="22" y="290" width="192" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Choose from Camera Libray"/>
+                                <connections>
+                                    <action selector="chooseFromLibaray:" destination="C5V-kW-i3Y" eventType="touchUpInside" id="sM5-JK-9pF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -148,11 +164,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ws4-Nr-Qla"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Post" id="F3I-P2-30o">
+                    <navigationItem key="navigationItem" id="F3I-P2-30o">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="a8s-re-GIr">
                             <connections>
                                 <action selector="cancelPress:" destination="C5V-kW-i3Y" id="IRK-ty-QHE"/>
-                                <segue destination="IMw-Za-o9S" kind="show" animates="NO" id="hXC-0f-BDO"/>
+                                <segue destination="uEi-q0-7KH" kind="showDetail" animates="NO" id="x3o-up-2q5"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="hPR-p9-fCO"/>
@@ -166,6 +182,7 @@
         <scene sceneID="R2h-q2-UsS">
             <objects>
                 <tabBarController storyboardIdentifier="AuthenticatedViewController" id="uEi-q0-7KH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Yz7-UG-9G2"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AqF-4u-8sG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -244,6 +261,6 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hXC-0f-BDO"/>
+        <segue reference="x3o-up-2q5"/>
     </inferredMetricsTieBreakers>
 </document>
