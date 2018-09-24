@@ -282,7 +282,11 @@
                                 <segue destination="uEi-q0-7KH" kind="showDetail" animates="NO" id="x3o-up-2q5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="hPR-p9-fCO"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="hPR-p9-fCO">
+                            <connections>
+                                <action selector="tapShare:" destination="C5V-kW-i3Y" id="P9s-Xp-dI0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="captionTextField" destination="Dbh-pS-gLC" id="9tD-LF-Qzx"/>
