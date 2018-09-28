@@ -1,0 +1,11 @@
+
+Showing All Issues
+
+Prepare build
+note: Using new build systemnote: Planning buildnote: Constructing build description
+
+Build system information
+error: Value for SWIFT_VERSION cannot be empty. (in target 'Instagram')
+
+
+Build failed    9/27/18, 4:19 PM    0.6 seconds

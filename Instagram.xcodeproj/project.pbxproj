@@ -18,6 +18,9 @@
 		4EE040A92156313E001FDD81 /* PhotoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE040A82156313E001FDD81 /* PhotoMapViewController.swift */; };
 		4EE040AB215776FE001FDD81 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE040AA215776FE001FDD81 /* HomeTableViewCell.swift */; };
 		4EE040AD215783E6001FDD81 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE040AC215783E6001FDD81 /* ProfileViewController.swift */; };
+		4EE0780A215DA92800501956 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE07809215DA92800501956 /* Post.swift */; };
+		4EE0780C215DAC5A00501956 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0780B215DAC5A00501956 /* PostDetailViewController.swift */; };
+		4EE07810215DB14F00501956 /* Showtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0780F215DB14F00501956 /* Showtime.swift */; };
 		6722A9CF33C528C304C50EB8 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18434FE07F2EBC422B9C10D /* Pods_Instagram.framework */; };
 		8DE6360BECDD6C339CD10685 /* Pods_InstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81EE49C0CD54A26EE62CB9C /* Pods_InstagramTests.framework */; };
 		9B63A0EF2234AC9DFC36D899 /* Pods_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C7EC4C1FE2AB415BD9CD95 /* Pods_InstagramUITests.framework */; };
@@ -61,6 +64,9 @@
 		4EE040A82156313E001FDD81 /* PhotoMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMapViewController.swift; sourceTree = "<group>"; };
 		4EE040AA215776FE001FDD81 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		4EE040AC215783E6001FDD81 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4EE07809215DA92800501956 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4EE0780B215DAC5A00501956 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		4EE0780F215DB14F00501956 /* Showtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Showtime.swift; sourceTree = "<group>"; };
 		5A1C6E353C65E009FCB3618D /* Pods-InstagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramTests/Pods-InstagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6C674B5D74AF172DE0DF3F2 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		B81EE49C0CD54A26EE62CB9C /* Pods_InstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,16 +128,15 @@
 		4E09F6D52150A4DB00F167DD /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				4EE040AA215776FE001FDD81 /* HomeTableViewCell.swift */,
+				4EE07808215DA68900501956 /* ViewController */,
 				4E09F6D62150A4DB00F167DD /* AppDelegate.swift */,
 				4E09F6DA2150A4DB00F167DD /* Main.storyboard */,
-				4E09F707215334D100F167DD /* LoginViewController.swift */,
-				4E61F80D2155D44400B698D9 /* HomeFeedViewController.swift */,
-				4EE040A82156313E001FDD81 /* PhotoMapViewController.swift */,
-				4EE040AC215783E6001FDD81 /* ProfileViewController.swift */,
-				4EE040AA215776FE001FDD81 /* HomeTableViewCell.swift */,
 				4E09F6DD2150A4DD00F167DD /* Assets.xcassets */,
 				4E09F6DF2150A4DD00F167DD /* LaunchScreen.storyboard */,
 				4E09F6E22150A4DD00F167DD /* Info.plist */,
+				4EE07809215DA92800501956 /* Post.swift */,
+				4EE0780F215DB14F00501956 /* Showtime.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -152,6 +157,18 @@
 				4E09F6F82150A4DD00F167DD /* Info.plist */,
 			);
 			path = InstagramUITests;
+			sourceTree = "<group>";
+		};
+		4EE07808215DA68900501956 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4E09F707215334D100F167DD /* LoginViewController.swift */,
+				4E61F80D2155D44400B698D9 /* HomeFeedViewController.swift */,
+				4EE040A82156313E001FDD81 /* PhotoMapViewController.swift */,
+				4EE040AC215783E6001FDD81 /* ProfileViewController.swift */,
+				4EE0780B215DAC5A00501956 /* PostDetailViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		A0955384A4A0F7AF7C7DB603 /* Frameworks */ = {
@@ -363,6 +380,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Instagram/Pods-Instagram-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -370,6 +388,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -406,10 +425,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE040AD215783E6001FDD81 /* ProfileViewController.swift in Sources */,
+				4EE0780C215DAC5A00501956 /* PostDetailViewController.swift in Sources */,
+				4EE07810215DB14F00501956 /* Showtime.swift in Sources */,
 				4EE040A92156313E001FDD81 /* PhotoMapViewController.swift in Sources */,
 				4E09F708215334D100F167DD /* LoginViewController.swift in Sources */,
 				4EE040AB215776FE001FDD81 /* HomeTableViewCell.swift in Sources */,
 				4E09F6D72150A4DB00F167DD /* AppDelegate.swift in Sources */,
+				4EE0780A215DA92800501956 /* Post.swift in Sources */,
 				4E61F80E2155D44400B698D9 /* HomeFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

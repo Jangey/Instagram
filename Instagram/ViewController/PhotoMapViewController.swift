@@ -16,6 +16,7 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var previewImage: UIImageView!
     
     var resizedPhoto: UIImageView!
+    var alertController = UIAlertController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +53,47 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func tapShare(_ sender: Any) {
+        Post.postUserImage(image: previewImage.image, withCaption: captionTextField.text, withCompletion: ({ (success, error) in
+            if (success) {
+                self.alertController = UIAlertController(title: "Success", message: "Image Successfully Uploaded", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                    // handle cancel response here. Doing nothing will dismiss the view.
+                }
+                self.alertController.addAction(cancelAction)
+                DispatchQueue.global().async(execute: {
+                    DispatchQueue.main.sync{
+                        self.present(self.alertController, animated: true, completion: nil)
+                        
+                    }
+                })
+            } else {
+                // There was a problem, check error.description
+                self.alertController = UIAlertController(title: "Error", message: "\(String(describing: error?.localizedDescription))", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                    // handle cancel response here. Doing nothing will dismiss the view.
+                }
+                self.alertController.addAction(cancelAction)
+                DispatchQueue.global().async(execute: {
+                    DispatchQueue.main.sync{
+                        self.present(self.alertController, animated: true, completion: nil)
+                        
+                    }
+                })
+            }
+        }))
     }
     
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // Local variable inserted by Swift 4.2 migrator.
+        //let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
+        //Parse has a limit of 10MB for uploading photos so you'll want to the code snippet below to resize the image before uploading to Parse.
+        previewImage.image = info[(UIImagePickerController.InfoKey.editedImage)] as! UIImage?
+        
+        // Dismiss UIImagePickerController to go back to your original view controller
+        dismiss(animated: true, completion: nil)
+    }
     /*
     //resizeImage function
     func resize(image: UIImage, newSize: CGSize) -> UIImage {
