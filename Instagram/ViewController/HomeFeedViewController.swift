@@ -37,6 +37,14 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
  
     }
     
+    @IBAction func tapNewPicture(_ sender: Any) {
+        let newPostPage = self.storyboard?.instantiateViewController(withIdentifier: "PhotoMapViewController")
+            //as! PhotoMapViewController
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = newPostPage
+    }
+    
+    
     @IBAction func onLogout(_ sender: Any) {
         
         // set user is logout
@@ -82,7 +90,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         fetchPost()
     }
  
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
         if let indexPath = tableView.indexPath(for: cell){
@@ -92,5 +100,5 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
     }
-    */
+ 
 }

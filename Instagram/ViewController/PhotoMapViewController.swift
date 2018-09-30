@@ -57,7 +57,12 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
             if (success) {
                 self.alertController = UIAlertController(title: "Success", message: "Image Successfully Uploaded", preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                    
                     // handle cancel response here. Doing nothing will dismiss the view.
+                    // Go back to home page.
+                    let homePage = self.storyboard?.instantiateViewController(withIdentifier: "AuthenticatedViewController")
+                    let appDelegate = UIApplication.shared.delegate
+                    appDelegate?.window??.rootViewController = homePage
                 }
                 self.alertController.addAction(cancelAction)
                 DispatchQueue.global().async(execute: {
